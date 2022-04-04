@@ -60,7 +60,7 @@ def show_score(x, y):
 
 
 def game_over_text():
-    over_text = over_font.render("YOU ARE A LOSER", True, (255, 255, 255))
+    over_text = over_font.render("GAME OVER", True, (255, 255, 255))
     screen.blit(over_text, (200, 250))
 
 
@@ -145,7 +145,7 @@ while running:
         
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            explosionSound = mixer.Sound("explosion.wav")
+            explosionSound = mixer.Sound("goat-bleet.wav")
             explosionSound.play()
             bulletY = 480
             bullet_state = "ready"
@@ -167,4 +167,4 @@ while running:
     player(playerX, playerY)
     show_score(textX, testY)
     pygame.display.update()
-    pygame.time.delay(40)
+    pygame.time.delay(30)
